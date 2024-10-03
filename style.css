@@ -15,14 +15,14 @@
 }
 
 .header {
-    padding: 1.5rem 10%;
+    padding: 1rem 10%;
     background: var(--snd-bf-color);
     z-index: 100;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
-    font-size: 35px;
+    font-size: 30px;
     color: var(--main-color);
     font-weight: 700;
     cursor: pointer;
@@ -43,7 +43,6 @@
 }
 
 /*------------ Home section -----------*/
-
 .home {
     display: flex;
     justify-content: space-between;
@@ -181,6 +180,9 @@
     .home-img {
         margin-top: 2rem;
     }
+    .home-img img {
+        max-width: 70%;
+    }
 
     .home-content {
         max-width: 100%;
@@ -198,6 +200,16 @@
     .navbar-nav .nav-link {
         font-size: 16px;
         margin-left: 10px;
+    }
+    .abtbtn {
+        padding: 8px 20px;
+        font-size: 15px;
+        border-radius: 35px;
+    }
+    .social-media a {
+        width: 40px;
+        height: 40px;
+        margin-left: 8px;
     }
 }
 
@@ -239,6 +251,16 @@
         font-size: 15px;
         padding: 10px 30px;
     }
+    .abtbtn {
+        padding: 8px 20px;
+        font-size: 15px;
+        border-radius: 35px;
+    }
+    .social-media a {
+        width: 30px;
+        height: 30px;
+        margin-left: 5px;
+    }
 }
 
 /* Extra small devices (portrait phones, less than 576px) */
@@ -250,13 +272,15 @@
     .home {
         padding: 0 2%;
     }
-
     .home-img {
         width: 200px;
         height: 200px;
-        margin: 2rem;
+        margin: 1rem;
     }
-
+    .home-img img {
+        border: 6px solid #fff;
+        margin-top: 3rem;
+    } 
     .home-content h1 {
         font-size: 25px;
     }
@@ -276,11 +300,17 @@
     .social-media a {
         width: 30px;
         height: 30px;
+
     }
 
     .btn-primary {
         padding: 8px 25px;
         font-size: 13px;
+    }
+    .abtbtn {
+        padding: 6px 16px;
+        font-size: 13px;
+        border-radius: 30px;
     }
 }
 
@@ -358,44 +388,41 @@
 
 /*-------- about --------*/
 
+/*---------- Base Styles for About Section ----------*/
 .about {
-    background-image: url(images/abt-removebg-preview.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* background-color: #031540; */
-    display: grid;
-    grid-template-columns: repeat(2, .5fr);
-    align-items: center;
-    gap: 1.5rem;
-    width: 100%;
+    background: #031540;
+    /* background-size: cover;
+    background-position: right center; 
+    background-repeat: no-repeat; */
+    display: flex; 
+    align-items: center; 
     justify-content: space-between;
-    min-height: 100vh;
-    padding: 70px 5% 0;
-    /* margin-right: 2rem; */
-}
-.about-text {
-    margin-right: 2%;
-    color: #ECCEAE;
+    gap: 2rem;
+    width: 100%;
+    height: 100vh;
+    padding: 70px 5%;
 }
 
-/* .about-text h2 {
+.about-text h2 {
+    flex: 1;
+    color: #ECCEAE;
+    padding: 20px; 
+    text-align: center;
     font-size: 60px;
-    letter-spacing: 1px;
+    padding-bottom: 10px;
+    /* padding-top: 70px; */
 }
 
 .about-text h2 span {
     color: var(--main-color);
-} */
+}
 
 .about-text p {
-    color: aliceblue;
-    font-size: 20px;
-    line-height: 1.1;
-    letter-spacing: 1px;
-    margin-bottom: 4rem;
+    color: #ECCEAE;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
     text-align: justify;
-    text-justify: inter-word;
 }
 
 .abtbtn-box {
@@ -406,14 +433,79 @@
     font-size: 15px;
     text-align: center;
     color: #081b29;
-    letter-spacing: 1px;
     text-decoration: none;
     font-weight: 600;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .abtbtn-box:hover {
-    box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50pc cyan, 0 0 100px cyan, 0 0 200px cyan;
+    box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan;
+}
+
+/*---------- Media Queries for Responsive Design ----------*/
+
+/* For Tablets and Medium Screens */
+@media (max-width: 992px) {
+    .about {
+        
+        height: auto; 
+        flex-direction: column; 
+        padding: 50px 5%;
+    }
+
+    .about-text {
+        width: 100%; 
+        padding: 20px;
+        text-align: center;
+    }
+
+    .about-text p {
+        font-size: 16px; 
+    }
+}
+
+/* For Small Devices and Mobile Screens */
+@media (max-width: 768px) {
+    .about {
+        height: auto;
+        padding: 30px 5%;
+    }
+
+    .about-text {
+        width: 100%;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .about-text p {
+        font-size: 14px; 
+    }
+
+    .abtbtn-box {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+/* For Extra Small Devices (Mobile Phones) */
+@media (max-width: 480px) {
+    .about {
+        padding: 20px 5%;
+    }
+    .about-text h2
+    {
+        font-size: 40px; 
+        padding-top: 40px;
+    }
+    .about-text p {
+        font-size: 15px; 
+        margin-bottom: 15px;
+    }
+
+    .abtbtn-box {
+        font-size: 13px;
+        padding: 8px 18px;
+    }
 }
 
 
@@ -505,6 +597,65 @@
     margin-bottom: 10px;
     line-height: 1.8;
 }
+/*---------- Media Queries for Responsive Design ----------*/
+
+@media (max-width: 768px) {
+    
+    .sec {
+        flex-direction: column;
+        padding-bottom: 30px;
+    }
+
+    .container1, .container2 {
+        width: 90%;  
+        max-height: none;
+        padding: 10px;
+        margin: 15px auto;  
+    }
+
+    .skills-list {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .skill-item {
+        justify-content: center;
+        text-align: center;
+        margin: 10px 0;  
+        width: 100%;
+    }
+
+    .skills-list ul {
+        padding-left: 0; 
+        text-align: center; 
+    }
+    .skills-list li
+    {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    
+    .subtitle {
+        font-size: 40px; 
+        padding-top: 40px;
+    }
+
+    .heading1 {
+        font-size: 1.5rem; 
+        margin-bottom: 20px;
+    }
+
+    .skill-item {
+        font-size: 16px;
+    }
+
+    .skills-list ul {
+        font-size: 1.2rem; 
+    }
+}
+
 
 /*------- projects -------*/
 
@@ -514,7 +665,6 @@
 
 .main-text {
     padding-top: 50px;
-    margin-top: 10px;
     padding-bottom: 130px;
 }
 
@@ -558,7 +708,7 @@
     bottom: -100%; 
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.70); /* Slightly darker background */
+    background-color: rgba(0, 0, 0, 0.70); 
     color: white;
     transition: bottom 0.5s ease;
     padding: 20px;
@@ -586,6 +736,49 @@
 .btn:hover {
     background-color: var(--main-color); 
     color: white; 
+}
+/* Media Queries for Responsiveness */
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+    .main-text {
+        padding-top: 40px; 
+        padding-bottom: 100px; 
+    }
+
+    .main-text h2 {
+        font-size: 50px; 
+        padding: 40px; 
+        padding-bottom: 80px; 
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+    .main-text {
+        padding-top: 30px; 
+        padding-bottom: 80px; 
+    }
+
+    .main-text h2 {
+        font-size: 40px; 
+        padding: 30px; 
+        padding-bottom: 60px; 
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 480px) {
+    .main-text {
+        padding-top: 20px; 
+        padding-bottom: 60px; 
+    }
+
+    .main-text h2 {
+        font-size: 30px; /* Reduce font size for smaller screens */
+        padding: 20px; 
+        padding-bottom: 50px; 
+    }
 }
 
 /*------- Service --------*/
@@ -621,7 +814,6 @@
     border-right: 10px;
     border-radius: 20px;
     transition: 0.5s, transform 0.5s;
-    /*box-shadow: 1px 1px 20px #012290f7, 1px 1px 40px #0053b8f7;*/
     border: #0ef 5px solid;
 }
 
@@ -673,12 +865,35 @@
     transform: translateY(-2px);
 }
 
+/* Responsive Design Media Queries */
 
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+    .sub-title {
+        font-size: 50px; 
+        padding-bottom: 60px; 
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+    .sub-title {
+        font-size: 40px; 
+        padding-bottom: 50px; 
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 480px) {
+    .sub-title {
+        font-size: 30px; 
+        padding-bottom: 40px; 
+    }
+}
 /*---------- contacts ----------*/
 
 .contacts {
     display: grid;
-    /*grid-template-columns: repeat (2, 1fr);*/
     align-items: center;
     gap: 3rem;
     padding: 40px;
@@ -711,13 +926,6 @@
     text-align: center;
 
 }
-
-/*.contact-text p{
-    color: rgb(177, 177, 177);
-    font-size: 20px;
-    line-height: 30px;
-    margin-bottom: 2rem;
-}*/
 .contact-list {
     margin-bottom: 3rem;
 }
@@ -778,6 +986,46 @@
     margin-top: 0px;
     color: var(--bg-color);
 }
+/* Media Queries for Responsive Design */
+
+/* For large screens */
+@media (max-width: 1200px) {
+    .contact-text h2 {
+        font-size: 50px;
+    }
+    .contact-text h4 {
+        font-size: 18px;
+    }
+}
+
+/* For tablets and small laptops */
+@media (max-width: 768px) {
+    .contact-text h2 {
+        font-size: 40px;
+    }
+    .contact-text h4 {
+        font-size: 16px;
+    }
+    .contacts {
+        padding: 30px;
+        gap: 2rem;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    .contact-text h2 {
+        font-size: 30px;
+    }
+    .contact-text h4 {
+        font-size: 14px;
+    }
+    .contacts {
+        padding: 20px;
+        padding-top: 50px;
+        gap: 1rem;
+    }
+}
 .top{
     position: fixed;
     bottom: 2.1rem;
@@ -805,317 +1053,3 @@
     box-shadow: 0 0 5px cyan,
     0 0 25px cyan, 0 0 50px cyan,0 0 200px cyan;
 }
-
-
-/* 
-@keyframes animate-path1 {
-    100% {
-        stroke-dashoffset: 180;
-    }
-}
-
-@keyframes animate-path2 {
-    100% {
-        stroke-dashoffset: 140;
-    }
-}
-
-@keyframes animate-path3 {
-    100% {
-        stroke-dashoffset: 90;
-    }
-}
-
-@keyframes animate-path4 {
-    100% {
-        stroke-dashoffset: 50;
-    }
-}
-
-@keyframes animate-bar {
-    100% {
-        stroke-dashoffset: -1;
-    }
-}
-
-@keyframes showText {
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes animate {
-
-    100% {
-        transform: scaleX(1);
-    }
-}
-
-@keyframes slideRight {
-    0% {
-        transform: translateX(-100px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateX(0px);
-        opacity: 1;
-    }
-}
-
-@keyframes slideTop {
-    0% {
-        transform: translateX(100px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateX(0px);
-        opacity: 1;
-    }
-}
-
-@keyframes slideBottom {
-    0% {
-        transform: translateX(-100px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateX(0px);
-        opacity: 1;
-    }
-}
-
-@keyframes slideUP {
-    0% {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateY(0px);
-        opacity: 1;
-    }
-}
-
-@media (max-width: 900px) and (min-width: 700px) {
-    .header{
-        display:block;
-    }
-    .logo {
-        position: relative;
-        font-size: 30px;
-        font-weight: 500;
-        text-align: center;
-    }
-    .logo::after{
-        content: "\a";
-        white-space: pre;
-    }
-    .navbar a {
-        font-size: 25px;
-        font-weight: 200;
-        margin-left: 0px;
-        padding: 10px 10px 0 0;
-    }
-    .navbar a::after{
-        content: "\a";
-        white-space: pre;
-    }
-    
-}
-
-@media (max-width: 700px) and (min-width: 400px) {
-    *{
-        overflow-x: hidden;
-        overflow-y: inherit;
-    }
-    /*navbar*/
-    
-    /* .header{
-        display:block;
-        
-    }
-    .logo {
-        position: relative;
-        font-size: 20px;
-        font-weight: 500;
-        text-align: center;
-    }
-    .logo::after{
-        content: "\a";
-        white-space: pre;
-    }
-    .navbar a {
-        font-size: 15px;
-        font-weight: 200;
-        margin-left: 0px;
-        padding: 10px 10px 0 0;
-    }
-    .navbar a::after{
-        content: "\a";
-        white-space: pre;
-    } */
-
-   
-    /*about*/
-    /* .about{
-        padding-bottom: 20px;
-        min-height: auto;
-    }
-    .about-text h2 {
-        font-size: 30px;
-        letter-spacing: 5px;
-    }
-    
-    .about-text p {
-        font-size: 15px;
-        line-height: normal;
-        letter-spacing: 1px;
-        margin-bottom: 4rem;
-        text-align: left;
-    }
-    .abtbtn-box:hover {
-        box-shadow: 0 0 5px cyan, 0 0 10px cyan, 0 0 15pc cyan, 0 0 20px cyan, 0 0 25px cyan;
-    }
-
-    skills
-    .subtitle{
-        font-size: 50px;
-        text-align: center;
-    }
-    .container1 {
-        width: 600px;
-        max-height: 500px;
-        padding: 20px;
-        margin-left: 50px;
-    }
-    .container2 {
-        width: 600px;
-        max-height: 500px;
-        padding: 10px;
-        margin-left: 0px;
-    }
-    
- 
-    project
-    .main-text {
-        padding-top: 20px;
-        margin-top: 10px;
-        padding-bottom: 50px;
-    }
-    .main-text h2 {
-        font-size: 50px;
-        padding-bottom: 15px;
-    }
-    .layer p {
-        line-height: normal;
-    }
-    service-------
-    .sub-title {
-        font-size: 50px;
-        padding-bottom: 50px;
-    }
-    .service-list div{
-        padding: 20px;
-    }
-    contact------
-    .contacts h2{
-        font-size: 50px;
-    }
-    .contact-list i{
-        font-size: 15px;
-        padding: 5px 5px 0 0;
-    }
-    
-    .top{
-        position: fixed;
-        bottom: 2rem;
-        left: 1rem;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        opacity: 0;
-        transition: all .4s;
-    }
-    
-}
-
-@media (max-width: 400px) {
-    *{
-        overflow-x: hidden;
-    }
-    .header{
-        display:block;
-    }
-    .logo {
-        position: relative;
-        font-size: 20px;
-        font-weight: 500;
-        text-align: center;
-    }
-    .logo::after{
-        content: "\a";
-        white-space: pre;
-    }
-    .navbar a {
-        font-size: 13px;
-        font-weight: 200;
-        margin-left: 0px;
-        padding: 10px 4px 0 0;
-    }
-    .navbar a::after{
-        content: "\a";
-        white-space: pre;
-    }
-
-    ----------- skills ------------
-
-    .subtitle{
-        font-size: 50px;
-        text-align: center;
-    }
-    .container1 {
-        width: 600px;
-        max-height: 500px;
-        padding: 20px;
-        margin-left: 50px;
-    }
-    .technical-skills {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        gap: 20px;
-        padding: 20px;
-        background-color: #f5f5f5; 
-    }
-    
-    .skill-logo {
-        width: 100px; 
-        text-align: center;
-    }
-    
-    .skill-logo img {
-        max-width: 100%; 
-        height: auto;
-        transition: transform 0.3s ease-in-out; 
-    }
-    
-    .skill-logo img:hover {
-        transform: scale(1.1); 
-    }
-    
-    @media (max-width: 768px) {
-        .technical-skills {
-            flex-direction: column;
-            align-items: center;
-        }
-    
-        .skill-logo {
-            margin-bottom: 20px;
-        }
-    }
-    
-    
